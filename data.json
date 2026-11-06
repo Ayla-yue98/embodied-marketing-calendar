@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "updated_at": "2026-11-06T20:50:57+08:00",
-  "last_collection_at": "2026-11-06T20:55:17+08:00",
-  "last_success_at": "2026-11-06T20:55:17+08:00",
+  "last_collection_at": "2026-11-06T21:39:41+08:00",
+  "last_success_at": "2026-11-06T21:39:41+08:00",
   "companies": [
     {
       "id": "unitree",
@@ -2103,6 +2103,79 @@
     }
   ],
   "runs": [
+    {
+      "at": "2026-11-06T21:39:41+08:00",
+      "window": "2026-09-24 至 2026-11-06",
+      "added": 0,
+      "status": "完成",
+      "ok_sources": 7,
+      "total_sources": 7,
+      "sources": [
+        {
+          "company": "unitree",
+          "state": "成功（窗口内无新增）",
+          "count": 0,
+          "dated": 11,
+          "skipped_future": 0,
+          "no_date": 0,
+          "error": null
+        },
+        {
+          "company": "deep",
+          "state": "成功",
+          "count": 5,
+          "dated": 6,
+          "skipped_future": 0,
+          "no_date": 0,
+          "error": null
+        },
+        {
+          "company": "boston",
+          "state": "成功",
+          "count": 3,
+          "dated": 7,
+          "skipped_future": 0,
+          "no_date": 0,
+          "error": null
+        },
+        {
+          "company": "agibot",
+          "state": "成功",
+          "count": 7,
+          "dated": 7,
+          "skipped_future": 0,
+          "no_date": 0,
+          "error": null
+        },
+        {
+          "company": "ubtech",
+          "state": "成功（窗口内无新增）",
+          "count": 0,
+          "dated": 3,
+          "skipped_future": 0,
+          "no_date": 0,
+          "error": null
+        },
+        {
+          "company": "galbot",
+          "state": "备用入口成功",
+          "count": 2,
+          "dated": 5,
+          "skipped_future": 0,
+          "no_date": 0,
+          "error": null
+        },
+        {
+          "company": "fourier",
+          "state": "成功（官网接口当前返回 0 条）",
+          "count": 0,
+          "dated": 0,
+          "skipped_future": 0,
+          "no_date": 0,
+          "error": null
+        }
+      ]
+    },
     {
       "at": "2026-11-06T20:55:17+08:00",
       "window": "2026-07-29 至 2026-11-06",
