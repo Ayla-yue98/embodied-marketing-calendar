@@ -4,16 +4,15 @@
 
 ## 当前状态
 
-页面已制作；原稿公司明细已导入；官网采集程序已经实际运行。**尚未上线，云端定时任务尚未启用。** 完成下列 GitHub Pages 发布配置后，才会获得团队可访问的网址和每月自动更新。
+网站已于 2026 年 11 月 6 日上线：[打开具身营销日历](https://ayla-yue98.github.io/embodied-marketing-calendar/)。
 
-## 推荐发布方式：GitHub Pages
+云端月度任务已启用。首次完整云端采集于北京时间 2026 年 11 月 6 日 21:39 完成，7/7 个入口可执行，保留 92 条记录。傅利叶官网接口本次返回 0 条，页面保留这一实际状态。
 
-需要一个 GitHub 账号。新建公开仓库，默认分支设为 `main`，将此文件夹中的所有文件放在仓库根目录，务必包含隐藏目录 `.github/workflows/`。
+## 发布与维护
 
-1. 打开仓库的 **Settings → Pages**，在 **Build and deployment → Source** 选择 **GitHub Actions**。
-2. 如仓库限制工作流权限，在 **Settings → Actions → General → Workflow permissions** 允许工作流写入仓库内容。
-3. 在 **Actions** 选择 **Update marketing calendar and publish**，点击 **Run workflow**。首次将采集官网并发布网页。
-4. 完成后，仓库 **Settings → Pages** 或工作流的 **github-pages** 环境会显示固定网址。
+网站及更新配置保存在 [GitHub 仓库](https://github.com/Ayla-yue98/embodied-marketing-calendar)，默认分支为 `main`，Pages 使用 GitHub Actions 发布。
+
+需要立即更新时，在仓库 **Actions → Update marketing calendar and publish → Run workflow** 运行即可。执行结果可在该页查看；网页「更新与来源」显示实际采集日期及各公司的采集状态。
 
 发布配置已包含月度定时任务：北京时间每月 1 日 10:00 触发，补充上一个月及重叠窗口内的官网新闻，保留历史数据，再发布到同一网址。GitHub 的定时任务可能延迟；页面显示实际采集时间。工作流仅发布生成的 `index.html`，没有上传原附件。
 
