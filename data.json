@@ -2244,10 +2244,10 @@
     }
   ],
   "automation": {
-    "enabled": false,
+    "enabled": true,
     "cadence": "每月 1 日 10:00",
     "timezone": "Asia/Shanghai",
-    "state": "待上线启用"
+    "state": "云端月度更新已启用"
   },
   "import": {
     "filename": "具身头部_营销日历_12个月_三类(1).html",
