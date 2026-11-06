@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="具身智能公司营销动作日历：按月查看品牌营销、公关与产品营销，追踪公开来源与更新记录。">
+  <meta name="color-scheme" content="light">
+  <title>具身营销日历 · 行业观察</title>
+  <style>/*__STYLES__*/</style>
+</head>
+<body>
+<div class="site-shell">
+  <header class="topbar">
+    <a class="wordmark" href="#"><span class="logo" aria-hidden="true">E<span>·</span></span><span>具身营销日历<small>EMBODIED MARKETING OBSERVATORY</small></span></a>
+    <button class="quiet" id="about-button">更新与来源 ↗</button>
+  </header>
+  <section class="hero">
+    <div class="hero-copy"><div class="eyebrow">行业观察 / 按月归档</div><h1>看见每个月的<br><span>营销动作。</span></h1><p>七家公司，三类营销。把零散的发布、合作与破圈事件，放回同一张日历。</p></div>
+    <div class="hero-meta"><div class="meta-line"><span>收录范围</span><strong>7 家公司 · 12 个月</strong></div><div class="meta-line"><span>页面数据更新</span><strong id="updated-date">—</strong></div><div class="meta-line"><span>月度采集</span><strong id="automation-state">待上线启用</strong></div><div class="meta-caption">记录保留年份，跨年同月便于比较。<br>无可靠日期的内容单独归档。</div></div>
+  </section>
+  <main class="workspace">
+    <aside class="sidebar" aria-label="公司筛选"><div class="section-label">观察公司</div><div id="company-nav"></div><div class="sidebar-note"><span class="note-dot"></span><p>公开动作 ≠ 内部状态<br>记录按来源可信度标记</p></div></aside>
+    <div class="content">
+      <div class="toolbar"><div class="toolbar-left"><label class="sr-only" for="year">年份</label><select id="year"></select><div class="view-switch" aria-label="浏览视图"><button id="view-month" aria-pressed="true">月度</button><button id="view-year" aria-pressed="false">全年</button></div></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索事件、产品、关键词" aria-label="搜索事件、产品、关键词"></label></div>
+      <div id="months" class="months" aria-label="月份选择"></div>
+      <div class="result-head"><div><div class="eyebrow" id="result-kicker">MONTHLY VIEW</div><h2 id="result-title">—</h2><p id="result-summary" aria-live="polite">—</p></div><div class="result-actions"><label class="sr-only" for="trust">来源状态</label><select id="trust"><option value="all">全部来源状态</option><option value="sourced">有公开来源</option><option value="verified">已人工核实</option><option value="pending">原稿待核实</option></select><button class="quiet export" id="export">导出 CSV ↓</button></div></div>
+      <div class="data-note" id="data-note"></div>
+      <div id="results"></div>
+      <details class="undated"><summary><span>日期待确认 / 持续动作</span><span id="undated-count">0 条</span></summary><p class="muted">原稿缺少年份或注明持续型的内容，未计入月度统计。</p><div id="undated-results"></div></details>
+    </div>
+  </main>
+  <footer><span>具身营销日历 <span class="footer-dot">·</span> 保留历史，持续补充</span><span id="footer-count">—</span></footer>
+</div>
+<dialog id="event-dialog" aria-labelledby="event-dialog-title"><div class="dialog-top"><span class="eyebrow">事件档案</span><button id="close-event" class="quiet" aria-label="关闭事件详情">关闭 ×</button></div><div id="event-detail"></div></dialog>
+<dialog id="about-dialog" aria-labelledby="about-dialog-title"><div class="dialog-top"><h2 id="about-dialog-title">更新与来源</h2><button id="close-about" class="quiet" aria-label="关闭更新与来源">关闭 ×</button></div><div id="about-content"></div></dialog>
+<script type="application/json" id="calendar-data">/*__DATA__*/</script>
+<script>/*__APP__*/</script>
+</body>
+</html>

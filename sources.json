@@ -1,0 +1,9 @@
+[
+  {"company":"unitree","url":"https://www.unitree.com/news/","fallback":"https://www.unitree.com/","allowed_hosts":["unitree.com","www.unitree.com"],"article_pattern":"/news/[0-9]+","publisher":"宇树科技官网"},
+  {"company":"deep","url":"https://www.deeprobotics.cn/news.html","fallback":"https://www.deeprobotics.cn/","allowed_hosts":["deeprobotics.cn","www.deeprobotics.cn"],"article_pattern":"/news/detail/[0-9]+\\.html","publisher":"云深处官网"},
+  {"company":"boston","url":"https://bostondynamics.com/news/","allowed_hosts":["bostondynamics.com","www.bostondynamics.com"],"article_pattern":"/(news|blog)/[^/#?]+/","publisher":"Boston Dynamics 官网"},
+  {"company":"agibot","url":"https://www.agibot.com/news","fallback":"https://www.agibot.com/","allowed_hosts":["agibot.com","www.agibot.com"],"article_pattern":"/article/[0-9]+/detail/[0-9]+\\.html","publisher":"智元官网"},
+  {"company":"ubtech","url":"https://www.ubtrobot.com/cn/about/news","allowed_hosts":["ubtrobot.com","www.ubtrobot.com"],"article_pattern":"/cn/about/news/[^/#?]+","publisher":"优必选官网"},
+  {"company":"galbot","url":"https://www.galbot.com/news","fallback":"https://www.galbot.com/","allowed_hosts":["galbot.com","www.galbot.com","mp.weixin.qq.com"],"article_pattern":"(/news/[^/#?]+|mp\\.weixin\\.qq\\.com/s/[^/#?]+)","publisher":"银河通用官网"},
+  {"company":"fourier","url":"https://www.fftai.com/fourier/newsroom","api_url":"https://www.fftai.com/api/user/news/findPageByTypeList?typeList=1,2,4,3&pageNum=1&pageSize=40&lang=zh_cn&enable=1","allowed_hosts":["fftai.com","www.fftai.com"],"adapter":"fourier_api","publisher":"傅利叶官网"}
+]
