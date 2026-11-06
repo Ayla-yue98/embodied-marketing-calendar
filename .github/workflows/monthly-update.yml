@@ -1,0 +1,70 @@
+name: Update marketing calendar and publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # 02:00 UTC = 10:00 Asia/Shanghai, first day of every month.
+    - cron: '0 2 1 * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: marketing-calendar-pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify date handling and build
+        run: |
+          python -m unittest discover -s tests -v
+          python build.py
+      - name: Collect official news
+        if: github.event_name != 'push'
+        run: python update.py --cloud
+      - name: Enable schedule display after publishing
+        if: github.event_name == 'push'
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data.json')
+          d=json.loads(p.read_text())
+          d['automation']={'enabled':True,'cadence':'每月 1 日 10:00','timezone':'Asia/Shanghai','state':'云端月度更新已启用'}
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          PY
+          python build.py
+      - name: Commit updated records
+        run: |
+          git config user.name 'calendar-update[bot]'
+          git config user.email 'calendar-update[bot]@users.noreply.github.com'
+          git add data.json index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update public marketing calendar'
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+      - name: Prepare website
+        run: |
+          mkdir public
+          cp index.html public/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - uses: actions/deploy-pages@v4
+        id: deployment
